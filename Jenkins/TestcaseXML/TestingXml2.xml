@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+	<functions>
+		<function name="startBrowser" value="first function description" />
+		<function name="firsttry" value="trying" />
+	</functions>
+
+	<variables>
+		<variable name="toContinueToGmail" value="Continue to Gmail" />
+		<variable name="username" value=""></variable>
+		<variable name="password" value=""></variable>
+		<variable name="search" value="srinath"></variable>
+	</variables>
+</root>

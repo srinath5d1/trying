@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<style>
+	.passRow {
+		color: green;
+	}
+	
+	.failRow {
+		color: red;
+	}
+	
+	.errorRow {
+		color: red;
+	}
+	
+	.infoRow {
+		color: orange;
+	}
+</style>
+<script type="text/javascript">
+	
+	function passChange() {
+		var totalElements = document.getElementsByClassName("passRow");
+		if(document.getElementById("Pass").checked == true) {
+			for(var i=0; i<totalElements.length; i++) {
+				totalElements[i].style.display = "";
+			}
+		}
+		
+		else if(document.getElementById("Pass").checked == false) {
+			for(var i=0; i<totalElements.length; i++) {
+				totalElements[i].style.display = "none";
+			}
+		}
+	}
+	
+	function failChange() {
+		var totalElements = document.getElementsByClassName("failRow");
+		if(document.getElementById("Fail").checked == true) {
+			for(var i=0; i<totalElements.length; i++) {
+				totalElements[i].style.display = "";
+			}
+		}
+		
+		if(document.getElementById("Fail").checked == false) {
+			for(var i=0; i<totalElements.length; i++) {
+				totalElements[i].style.display = "none";
+			}
+		}
+	}
+	
+	function errorChange() {
+		var totalElements = document.getElementsByClassName("errorRow");
+		if(document.getElementById("Error").checked == true) {
+			for(var i=0; i<totalElements.length; i++) {
+				totalElements[i].style.display = "";
+			}
+		}
+		
+		if(document.getElementById("Error").checked == false) {
+			for(var i=0; i<totalElements.length; i++) {
+				totalElements[i].style.display = "none";
+			}
+		}
+	}
+	
+	function infoChange() {
+		var totalElements = document.getElementsByClassName("infoRow");
+		if(document.getElementById("Info").checked == true) {
+			for(var i=0; i<totalElements.length; i++) {
+				totalElements[i].style.display = "";
+			}
+		}
+		
+		if(document.getElementById("Info").checked == false) {
+			for(var i=0; i<totalElements.length; i++) {
+				totalElements[i].style.display = "none";
+			}
+		}
+	}
+	
+	function checkAll() {
+		document.getElementById("Pass").setAttribute('checked', 'checked');
+		document.getElementById("Fail").setAttribute('checked', 'checked');
+		document.getElementById("Error").removeAttribute('checked', 'checked');
+		document.getElementById("Info").removeAttribute('checked', 'checked');
+		infoChange();
+		errorChange();
+	}
+</script>
+<body onload="checkAll()">
+	<table width="25%" cellspacing="5">
+		<tbody align="center">
+			<tr>
+				<td><input type="checkbox" id="Pass" onchange="passChange()">Pass</td>
+				<td><input type="checkbox" id="Fail" onchange="failChange()">Fail</td>
+				<td><input type="checkbox" id="Error" onchange="errorChange()">Error</td>
+				<td><input type="checkbox" id="Info" onchange="infoChange()">Info</td>
+		</tr>
+		</tbody>
+	</table>
+	
+	<table width="100%" cellpadding="10px" border="1">
+		<tbody>
+			<tr class="passRow" width="25%"><td>Pass</td><td align="left" width="75%">Expected Result and actual Result <p>
+			<a href="/Users/srinath/Downloads/16904920_1277830528931051_8281520841281176753_o.jpg" target="_blank">Screenshot</a></td>
+			</tr>
+			<tr class="passRow" width="25%"><td>Pass</td><td align="left" width="75%">Expected Result</td></tr>
+			<tr class="passRow" width="25%"><td>Pass</td><td align="left" width="75%">Expected Result</td></tr>
+			<tr class="failRow" width="25%"><td>Fail</td><td align="left" width="75%">Expected Result</td></tr>
+			<tr class="errorRow" width="25%"><td>Error</td><td align="left" width="75%">Expected Result</td></tr>
+			<tr class="infoRow" width="25%"><td>Info</td><td align="left" width="75%">Expected Result</td></tr>
+		</tbody>
+	</table>
+</body>
+</html>
